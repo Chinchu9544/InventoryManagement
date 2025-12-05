@@ -13,13 +13,13 @@ namespace InventoryManagement.Controllers
         {
             _service = service;
         }
-        //[HttpGet]
-        //public async Task<IActionResult> GetAll()
-        //{
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
 
-        //    var categorylist = await _service.GetAllAsync();
+            var categorylist = await _service.GetAllAsync();
 
-        //    return Ok(categorylist);
-        //}
+            return Ok(categorylist);
+        }
     }
 }
