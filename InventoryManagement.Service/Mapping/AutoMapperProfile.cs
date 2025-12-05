@@ -14,6 +14,7 @@ namespace InventoryManagement.Service.Mapping
         public AutoMapperProfile()
         {
             CreateMap<Category, CategoryDto>();
+            CreateMap<CategoryCreateDto, Category>();
         }
         
     }
