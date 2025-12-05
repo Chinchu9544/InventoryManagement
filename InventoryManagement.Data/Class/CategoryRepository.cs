@@ -18,10 +18,25 @@ namespace InventoryManagement.Data.Class
           _context=context;
         }
 
+        public async Task AddCategoryAsync(Category category)
+        {
+            await _context.Categories.AddAsync(category);
+        }
+
         public async Task<List<Category>> GetCategories()
         {
             var categorylist = await _context.Categories.ToListAsync();
             return categorylist;
+        }
+
+        public async Task<Category> GetCategoryByIdAsync(int id)
+        {
+            return await _context.Categories.SingleOrDefaultAsync(c=>c.Id==id);
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }

@@ -10,5 +10,7 @@ namespace InventoryManagement.Service.Interface
     public interface ICategoryService
     {
         Task<List<CategoryDto>> GetAllAsync();
+        Task<CategoryDto> CreateAsync(CategoryCreateDto dto);
+        Task<CategoryDto> GetByIdAsync(int id);
     }
 }
